@@ -1,0 +1,23 @@
+# Build output
+**/bin/
+**/obj/
+frontend/dist/
+/dist/
+**/node_modules/
+# Local data — never commit
+.env
+backups/
+data/
+backend/src/LocalInvoiceManager.Web/data/
+backend/src/LocalInvoiceManager.Web/backups/
+*.db
+*.db-shm
+*.db-wal
+# Editors
+.vs/
+.vscode/
+.idea/
+*.user
+.DS_Store
+# Local Claude Code settings
+.claude/settings.local.json

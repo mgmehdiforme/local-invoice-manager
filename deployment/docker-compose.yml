@@ -1,0 +1,34 @@
+# Run from the repository root:
+#   docker compose -f deployment/docker-compose.yml --env-file .env up -d --build
+name: local-invoice-manager
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile
+      args:
+        APP_UID: ${APP_UID:-1000}
+    image: local-invoice-manager:latest
+    container_name: local-invoice-manager
+    restart: unless-stopped
+    # Only this computer can reach the app. Never change 127.0.0.1 to 0.0.0.0.
+    ports:
+      - "127.0.0.1:${APP_PORT:-8090}:8080"
+    volumes:
+      - lim-data:/data
+      - ${BACKUP_DIR:-../backups}:/backups
+    environment:
+      # Time zone for "today" (due dates, daily jobs). Set APP_TIMEZONE in .env, e.g. Europe/London.
+      TZ: ${APP_TIMEZONE:-UTC}
+    security_opt:
+      - no-new-privileges:true
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  lim-data:
+    name: local-invoice-manager-data
