@@ -35,7 +35,7 @@ export default function CustomerDetailPage() {
           <div className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-sm text-muted-foreground">
             {(c.mobile || c.phone) && <span className="inline-flex items-center gap-1.5"><Phone className="size-3.5" /><span dir="ltr" className="num">{fa(c.mobile || c.phone)}</span></span>}
             {c.email && <span className="inline-flex items-center gap-1.5"><Mail className="size-3.5" />{c.email}</span>}
-            {c.address && <span className="inline-flex items-center gap-1.5"><MapPin className="size-3.5" />{[c.city, c.address].filter(Boolean).join(t("، "))}</span>}
+            {c.address && <span className="inline-flex items-center gap-1.5"><MapPin className="size-3.5" />{(i18n.lang === "fa" ? [c.city, c.address] : [c.address, c.city]).filter(Boolean).join(t("، "))}</span>}
           </div>
         </div>
         <div className="flex gap-2">

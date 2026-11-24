@@ -1,0 +1,134 @@
+<!doctype html>
+<!--
+  Repository cover (1280×640, rendered at 2×). Source for docs/images/cover.png.
+  Regenerate: open in headless Chrome at 1280×640, deviceScaleFactor 2, and screenshot (fonts come from
+  frontend/node_modules after `npm install`).
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+  @font-face { font-family: "Vazirmatn"; src: url("../../../frontend/node_modules/@fontsource-variable/vazirmatn/files/vazirmatn-latin-wght-normal.woff2") format("woff2"); font-weight: 100 900; unicode-range: U+0000-00FF, U+2000-206F, U+20AC, U+2122; }
+  @font-face { font-family: "Vazirmatn"; src: url("../../../frontend/node_modules/@fontsource-variable/vazirmatn/files/vazirmatn-latin-ext-wght-normal.woff2") format("woff2"); font-weight: 100 900; unicode-range: U+0100-024F, U+20A0-20CF; }
+  @font-face { font-family: "Vazirmatn"; src: url("../../../frontend/node_modules/@fontsource-variable/vazirmatn/files/vazirmatn-arabic-wght-normal.woff2") format("woff2"); font-weight: 100 900; unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFF; }
+
+  :root {
+    --ledger: #0b3632;
+    --ledger-2: #0e433e;
+    --rule: rgba(255, 255, 255, 0.055);
+    --margin: #d0563c;
+    --paper: #fbfbf7;
+    --ink: #17201e;
+    --muted: #6b7571;
+    --line: #e2e5e0;
+    --teal: #0f766e;
+    --mint: #8fe0c8;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1280px; height: 640px; overflow: hidden; }
+  body {
+    font-family: "Vazirmatn", sans-serif;
+    color: #fff;
+    background:
+      linear-gradient(90deg, transparent 63px, var(--margin) 63px, var(--margin) 65px, transparent 65px),
+      repeating-linear-gradient(180deg, transparent 0 31px, var(--rule) 31px 32px),
+      radial-gradient(120% 90% at 85% 10%, var(--ledger-2), var(--ledger) 60%);
+    position: relative;
+  }
+
+  /* Left: the pitch */
+  .pitch { position: absolute; left: 104px; top: 92px; width: 520px; }
+  .mark { display: flex; align-items: center; gap: 14px; margin-bottom: 30px; }
+  .mark .logo { width: 46px; height: 46px; border-radius: 12px; background: var(--teal); display: grid; place-items: center; box-shadow: 0 0 0 1px rgba(255,255,255,.12) inset; }
+  .mark .logo svg { width: 24px; height: 24px; }
+  .mark span { font-size: 17px; font-weight: 600; letter-spacing: .01em; color: var(--mint); }
+  h1 { font-size: 76px; line-height: .98; font-weight: 800; letter-spacing: -0.03em; }
+  h1 em { font-style: normal; color: var(--mint); }
+  .lede { margin-top: 26px; font-size: 23px; line-height: 1.42; color: rgba(255,255,255,.82); font-weight: 400; max-width: 470px; }
+  .runs { margin-top: 36px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .runs span { font-size: 15px; font-weight: 600; padding: 7px 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,.22); color: #fff; }
+  .foot { margin-top: 22px; font-size: 15px; color: rgba(255,255,255,.6); }
+
+  /* Right: the dashboard behind, the invoice in front */
+  .screen {
+    position: absolute; left: 690px; top: 70px; width: 760px; border-radius: 14px; overflow: hidden;
+    transform: rotate(4deg); box-shadow: 0 30px 80px rgba(0,0,0,.45);
+    border: 1px solid rgba(255,255,255,.15);
+  }
+  .screen .bar { height: 26px; background: #e9ece8; display: flex; align-items: center; gap: 7px; padding-left: 12px; }
+  .screen .bar i { width: 10px; height: 10px; border-radius: 50%; background: #c9cec9; display: block; }
+  .screen img { display: block; width: 100%; }
+
+  .invoice {
+    position: absolute; left: 650px; top: 150px; width: 400px;
+    background: var(--paper); color: var(--ink); border-radius: 6px; padding: 26px 28px 24px;
+    transform: rotate(-3.5deg); box-shadow: 0 24px 60px rgba(0,0,0,.42), 0 2px 0 rgba(0,0,0,.04);
+  }
+  .invoice::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 6px; background: var(--teal); border-radius: 6px 6px 0 0; }
+  .inv-head { display: flex; justify-content: space-between; align-items: flex-start; }
+  .inv-head b { font-size: 22px; color: var(--teal); font-weight: 800; letter-spacing: -.01em; }
+  .inv-head .fa { font-size: 15px; color: var(--muted); font-weight: 600; direction: rtl; }
+  .meta { margin-top: 4px; font-size: 11.5px; color: var(--muted); line-height: 1.6; }
+  .meta strong { color: var(--ink); font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 12.5px; }
+  th { text-align: left; font-size: 10.5px; font-weight: 700; color: #fff; background: var(--teal); padding: 6px 8px; }
+  th:last-child, td:last-child { text-align: right; }
+  td { padding: 7px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td small { color: var(--muted); font-size: 10.5px; }
+  td.inc { color: var(--teal); font-weight: 700; }
+  .totals { margin-top: 10px; margin-left: auto; width: 62%; font-size: 12.5px; }
+  .totals div { display: flex; justify-content: space-between; padding: 4px 0; color: var(--muted); }
+  .totals .due { margin-top: 6px; padding: 9px 10px; background: var(--teal); color: #fff; font-weight: 800; font-size: 16px; border-radius: 3px; }
+
+  .stamp {
+    position: absolute; left: 34px; bottom: 30px; transform: rotate(-12deg);
+    border: 3px solid var(--margin); color: var(--margin); border-radius: 8px; padding: 6px 12px 5px;
+    font-weight: 800; font-size: 19px; letter-spacing: .06em; line-height: 1.05; text-align: center;
+    mix-blend-mode: multiply; opacity: .9;
+  }
+  .stamp small { display: block; font-size: 10px; letter-spacing: .14em; font-weight: 700; }
+</style>
+</head>
+<body>
+  <section class="pitch">
+    <div class="mark">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg>
+      </div>
+      <span>Invoice Manager</span>
+    </div>
+    <h1>Your invoices.<br /><em>Your computer.</em></h1>
+    <p class="lede">Invoices, quotations, payments and reports that run locally and work offline. No account, no cloud, no subscription.</p>
+    <div class="runs"><span>Windows</span><span>macOS</span><span>Linux</span><span>Docker</span></div>
+    <p class="foot">Free and open source under the MIT licence</p>
+  </section>
+
+  <figure class="screen">
+    <div class="bar"><i></i><i></i><i></i></div>
+    <img src="../dashboard.webp" alt="" />
+  </figure>
+
+  <article class="invoice">
+    <div class="inv-head">
+      <b>Invoice</b>
+      <span class="fa">فاکتور</span>
+    </div>
+    <div class="meta">No. <strong>OSS-2026-0001</strong><br />Bill to <strong>You</strong></div>
+    <table>
+      <thead><tr><th>Description</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>English and فارسی<br /><small>left-to-right and right-to-left</small></td><td class="inc">included</td></tr>
+        <tr><td>Gregorian and Jalali calendars</td><td class="inc">included</td></tr>
+        <tr><td>Any currency <small>$ € £ ¥ ﷼</small></td><td class="inc">included</td></tr>
+        <tr><td>PDF, payments, reports, backups</td><td class="inc">included</td></tr>
+        <tr><td>Cloud account</td><td>not needed</td></tr>
+      </tbody>
+    </table>
+    <div class="totals">
+      <div><span>Subscription</span><span>0.00</span></div>
+      <div class="due"><span>Total</span><span>0.00</span></div>
+    </div>
+    <div class="stamp">FREE<small>OPEN SOURCE</small></div>
+  </article>
+</body>
+</html>

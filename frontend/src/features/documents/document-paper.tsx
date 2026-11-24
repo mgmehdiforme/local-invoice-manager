@@ -84,7 +84,7 @@ export function DocumentPaper(p: PaperProps) {
             seg([t("کد پستی"), p.seller.postalCode, true], [t("تلفن"), p.seller.phone, true]), seg([null, p.seller.email, true]),
           ]} />
           <Party tpl={tpl} title={t("خریدار")} lines={p.customer ? [
-            seg([p.customer.name]), seg([p.customer.companyName]), seg([[p.customer.city, p.customer.address].filter(Boolean).join(LIST_SEP)]),
+            seg([p.customer.name]), seg([p.customer.companyName]), seg([(i18n.lang === "fa" ? [p.customer.city, p.customer.address] : [p.customer.address, p.customer.city]).filter(Boolean).join(LIST_SEP)]),
             seg([t("کد پستی"), p.customer.postalCode, true], [t("تلفن"), p.customer.mobile || p.customer.phone, true]),
             seg([t("کد اقتصادی"), p.customer.taxId, true], [t("شناسه/کد ملی"), p.customer.nationalId, true]),
             seg([null, p.customer.email, true]),

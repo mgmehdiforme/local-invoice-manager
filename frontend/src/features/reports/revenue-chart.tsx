@@ -39,7 +39,7 @@ export function RevenueChart({ data, height = 260, currency: own }: { data: Reve
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={rows} barGap={2} barCategoryGap="22%" margin={{ top: 4, right: 4, bottom: 0, left: 4 }}>
             <CartesianGrid vertical={false} stroke="#e2e5e2" strokeDasharray="0" />
-            <XAxis dataKey="short" reversed={rtl} tickLine={false} axisLine={false} tick={{ fontSize: 11, fill: "#66706c", fontFamily: "inherit" }} interval={0} />
+            <XAxis dataKey="short" reversed={rtl} tickLine={false} axisLine={false} tick={{ fontSize: 11, fill: "#66706c", fontFamily: "inherit" }} interval="preserveStartEnd" minTickGap={6} />
             <YAxis orientation={rtl ? "right" : "left"} tickLine={false} axisLine={false} width={84} tickFormatter={compact} tick={{ fontSize: 11, fill: "#66706c", fontFamily: "inherit" }} />
             <Tooltip
               cursor={{ fill: "rgba(24,33,31,.05)" }}
